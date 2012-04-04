@@ -69,3 +69,17 @@
 .paymentIcon:active, .paymentIcon:hover {
 	opacity: 0.5;
 }
+
+#stockResults{
+	margin-top: 50px !important;
+}
+
+li {
+list-style: none;
+padding-bottom: 4px !important;
+padding-left: 15px !important;
+}
+
+ul{
+	padding-top: 15px !important;
+}

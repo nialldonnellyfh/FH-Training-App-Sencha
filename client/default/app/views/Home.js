@@ -107,7 +107,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
   		height: 20
   	},
 
-  	/* Webview & Settings Buttons  */
+  	/* Stocks & Settings Buttons  */
   	new Ext.Panel({
   		height: 100,
 

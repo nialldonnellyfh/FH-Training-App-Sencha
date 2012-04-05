@@ -4,7 +4,7 @@
 function getStockInfo(param) {
   return stock.getStockInfo(param.name);
 }
-
+  
 /*
  * Twitter
  */

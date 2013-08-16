@@ -2,6 +2,7 @@ app.views.Viewport = Ext.extend(Ext.Panel, {
   fullscreen: true,
   ui: 'light',
   layout: 'card',
+  id: 'viewport',
 
   cardSwitchAnimation: {
     type: 'slide',

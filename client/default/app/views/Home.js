@@ -31,7 +31,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	{
 		  		xtype: 'button',
 		  		cls: 'mapIcon',
-          id: 'mapIcon',
+          id: 'mapBtn',
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
@@ -44,7 +44,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	{
 		  		xtype: 'button',
 		  		cls: 'twitterIcon',
-          id: 'twitterIcon',
+          id: 'twitterBtn',
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
@@ -77,7 +77,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	{
 		  		xtype: 'button',
 		  		cls:  'paymentIcon',
-          id: 'paymentIcon',
+          id: 'paymentBtn',
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
@@ -90,7 +90,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	{
 		  		xtype: 'button',
 		  		cls: 'cameraIcon',
-          id: 'cameraIcon',
+          id: 'cameraBtn',
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
@@ -126,7 +126,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	{
 		  		xtype: 'button',
 		  		cls: 'webviewIcon',
-          id: 'webviewIcon',
+          id: 'webviewBtn',
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {
@@ -142,7 +142,7 @@ app.views.Home = Ext.extend(Ext.Panel, {
 		  	{
 		  		xtype: 'button',
 		  		cls: 'settingsIcon',
-          id: 'settingsIcon',
+          id: 'settingsBtn',
 		  		width:  100,
 		  		height: 100,
 		  		handler: function() {

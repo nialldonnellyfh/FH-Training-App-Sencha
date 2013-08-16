@@ -21,6 +21,7 @@ app.views.Twitter = Ext.extend(Ext.Panel, {
         {
           text: 'Back',
           ui: 'back',
+          id: 'back',
           hidden: app.hideBack || false,
           handler: function() {
             app.views.viewport.setActiveItem(app.views.home, {type: 'slide', direction: 'right'});

@@ -12,6 +12,7 @@ app.views.Camera = Ext.extend(Ext.Panel, {
         {
           text: 'Back',
           ui: 'back',
+          id: 'back',
           handler: function() {
             app.views.viewport.setActiveItem(app.views.home, {type: 'slide', direction: 'right'});
           }

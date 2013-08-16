@@ -37,7 +37,7 @@ app.views.Payment = Ext.extend(Ext.Panel, {
           instructions: 'Please enter the payment information above.',
           defaults: {
             labelAlign: 'left',
-            labelWidth: '50%'
+            labelWidth: '35%'
           },
           items: [
             {

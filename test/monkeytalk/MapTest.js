@@ -49,7 +49,7 @@ Test.MapTest.prototype.run = function() {
   app.device().screenshot();
 
   // Go back to home page
-  app.view('back').tap();
+  app.view('Back').tap();
   sleep(1000);
   app.debug().print("MapTest - Take screenshot of result of pressing back button.");
   app.device().screenshot();

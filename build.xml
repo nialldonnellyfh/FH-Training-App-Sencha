@@ -112,7 +112,7 @@
     depends="copy-libs">
     <monkeytalk:run agent="${mt.agentIOS}"
       script="${fh.testSuite}"
-      host="localhost"
+      host="192.168.28.134"
       reportdir="${fh.reportDir}"
       thinktime="${mt.thinktime}"
       timeout="${mt.timeout}"

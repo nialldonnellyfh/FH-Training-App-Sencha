@@ -44,7 +44,7 @@ Test.TwitterTest.prototype.run = function() {
   app.device().screenshot();
 
   // Go back to home page
-  app.view('back').tap();
+  app.view('Back').tap();
   sleep(2000);
   app.debug().print("TwitterTest - Take screenshot of result of pressing back button.");
   app.device().screenshot();

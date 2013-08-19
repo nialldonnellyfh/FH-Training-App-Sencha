@@ -29,7 +29,7 @@ function sleep(numberMillis) {
   }
 };
 
-
+var cardNumber = '1234567890101112';
 Test.PaymentTest.prototype.run = function() {
   var app = this.app;
 
@@ -45,15 +45,18 @@ Test.PaymentTest.prototype.run = function() {
   // Test card selection
   app.debug().print("PaymentTest - Test card selection.");
   app.input('cardtype').tap();
-  app.device().screenshot();
   app.view('Mastercard').tap();
   app.view('Done').tap();
   sleep(1000);
+  app.input('cardtype').verify('Mastercard');
+
+  // Wait for selection to hide and take screen shot of entered card
   app.device().screenshot();
 
   //Enter a card number
   app.debug().print("PaymentTest - Test entering a card number.");
-  app.input('cardnumber').enterText('1234567890101112', true);
+  app.input('cardnumber').enterText(cardNumber, true);
+  app.input('cardnumber').verify(cardNumber);
   app.device().screenshot();
 
   // Validate the card and capture the output
@@ -62,12 +65,14 @@ Test.PaymentTest.prototype.run = function() {
   // Wait for act call
   sleep(10000);
   app.device().screenshot();
+  app.view('Response').verify();
   app.view('OK').tap();
+
   // Wait for close animation
-  sleep(2000)
+  sleep(1000);
 
   // Go back to home page
-  app.view('back').tap();
+  app.view('Back').tap();
   sleep(1000);
   app.debug().print("PaymentTest - Take screenshot of result of pressing back button.");
   app.device().screenshot();

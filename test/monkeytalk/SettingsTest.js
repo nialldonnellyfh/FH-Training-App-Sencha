@@ -40,9 +40,6 @@ Test.SettingsTest.prototype.run = function() {
   app.debug().print("SettingsTest - Wait for animations");
   sleep(2000);
 
-  app.view('viewport').drag(200, 200, 200, 0);
-
-
   app.debug().print("SettingsTest - Take screenshot of tap result. Check screenshot for settings list");
   app.device().screenshot();
 
@@ -50,34 +47,22 @@ Test.SettingsTest.prototype.run = function() {
   app.input('title').tap();
   app.view('Ms').tap();
   app.view('Done').tap();
+  sleep(1000);
+  app.input('title').verify('Ms');
 
   // Name inputs
   app.input('name').enterText('FeedHenry', true);
+  app.input('name').verify('FeedHenry');
 
   // Verify settings so far
   app.debug().print("SettingsTest - Take screenshot to verify inputs");
   app.device().screenshot();
-
-  // Scroll down the page
-  app.scroller('*').scroll(0, 0, 0, 100);
 
   // Toggle the input slider and switch
   app.view('value').tap();
   app.view('enable').tap();
 
   // Capture seetings
-  app.debug().print("SettingsTest - Take screenshot to verify inputs");
-  app.device().screenshot();
-
-  // Save settings
-  app.view('Save Settings').tap();
-  sleep(2000);
-  app.view('OK').tap();
-  sleep(2000);
-
-  // Go back to home page
-  app.view('back').tap();
-  sleep(2000);
-  app.debug().print("SettingsTest - Take screenshot of result of pressing back button.");
+  app.debug().print("SettingsTest - Take screenshot to verify inputs of slider and toggle.");
   app.device().screenshot();
 };

@@ -2,38 +2,57 @@
 
 ## Overview
 
-As part of this training Session we are going to create a simple Sencha Touch 1.1 Application. The app will train you in how to build a Sencha touch User Interface and how to navigate within it. You will also learn to use the FeedHenry APIs.
-
-![](https://github.com/feedhenry/FH-Training-App-Sencha/raw/v1/docs/HomeView.png)
+This branch provides a sample a application which makes use of the <a href='http://www.gorillalogic.com/monkeytalk'>MonkeyTalk</a> testing functionality provided by the FeedHenry platform. It contains all code required to run the MonkeyTalk tests against the app.
 
 ## Step 1 
 
-To begin this tutorial download the boilerplate code from <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/boilerplate">this link</a> and copy to your workspace or use the following git commands to setup the project in your workspace:
-
-    cd my-workspace-folder
-    git clone git@github.com:feedhenry/FH-Training-App-Sencha.git.
-    cd FH-Training-App-Sencha
-    git checkout boilerplate
+Fork this application to your GitHub account.
 
 This represents our basic file structure for the entire tutorial.
 
 ## Step 2
 
-You are now setup to begin the tutorial. To begin Part 1 click <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/boilerplate">here</a>. 
+Go to the FeedHenry domain that you will use to build the platform and create a new app in the Studio. If you don't know which domain to use our <a href='http://hpcs.feedhenry.com'>HPCS</a> will do. 
 
-## Links to Tutorial Sections & Tags:
+When prompted select the option "Create an App from a Git repository" and click next. 
+
+On the next screen enter an application name, provide the Git URL with the format "git@github.com:{YOUR GIT USERNAME}/FH-Training-App-Sencha.git" and enter "ci_testing" in the Git Branch field then click next.
+
+After a few seconds you will be presented with an SSH key that you will need to add to your GitHub account add this then click next and select "Quickstart" once the app has finished being created.
+
+## Step 3
+
+On the left tab in the Studio navigate to the "Hybrid Client" section and select "Configuration".
+
+Select the tab representing platform you plan to build for and check the "Enable MonkeyTalk" box. Then scroll down and click Save. If you plan to run the app on the iOS Simulator ensure to check the "Simulator Only" box under the iPhone/iPad/iOS tab and click Save
+
+## Step 4
+
+Build the application and download it using the "Build" tab on the left of the Studio and completing the build process.
+
+Place the build file and place it in the path_to_repo/test/fixtures/monkeytalk directory.
+
+## Step 5
+
+We will now run the tests. Depending on the platform you have built for use the following steps.
+
+### iOS Simulator
+Extract the contents of the .zip file and copy the filename of the extracted file to the clipboard.
+Open the file path_to_repo/build.xml and change the value of the the property "fh.iphoneapppath" to point to your application like so.
+
+    <property name="fh.iphoneapppath" value="test/fixtures/monkeytalk/MyAppName.app/MyAppName"/>
+
+Now run the tests by typing the following into the terminal:
+
+    ant local-ios-sim
+
+### iOS Device
+Ensure the app is installed on device and has a Wifi connection on the same network as your development machine. In build.xml find the "local-test-ios-device" target and change its host property to the IP Address of your device. To run tests type the following:
+
+    ant local-test-ios-device
 
 
-* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/boilerplate">Part 1</a>
-* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v1">Part 2</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v1">Finished Code Pt1.zip</a>
-* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v2">Part 3</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v2">Finished Code Pt2.zip</a>
-* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v3">Part 4</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v3">Finished Code Pt3.zip</a>
-* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v4">Part 5</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v4">Finished Code Pt4.zip</a>
-* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v5">Part 6</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v5">Finished Code Pt5.zip</a>
-* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v6">Part 7</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v6">Finished Code Pt6.zip</a>
-* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v7">Part 8</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v7">Finished Code Pt7.zip</a>
-* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/tree/v8">Part 9</a> & <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v8">Finished Code Pt8.zip</a>
+### Android Emulator
+Install the application APK on the emulator and open the application. Now run the command:
 
-* <a href="https://github.com/feedhenry/FH-Training-App-Sencha/zipball/v9">Finished Code Pt9.zip</a> 
-
-
+    ant local-test-android-emulator

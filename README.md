@@ -8,13 +8,11 @@ This branch provides a sample a application which makes use of the <a href='http
 
 Fork this application to your GitHub account.
 
-This represents our basic file structure for the entire tutorial.
-
 ## Step 2
 
-Go to the FeedHenry domain that you will use to build the platform and create a new app in the Studio. If you don't know which domain to use our <a href='http://hpcs.feedhenry.com'>HPCS</a> will do. 
+Go to the FeedHenry domain that you will use to build the platform and create a new app in the Studio. If you don't know which domain to use, use our <a href='http://hpcs.feedhenry.com'>hpcs.feedhenry.com</a>. 
 
-When prompted select the option "Create an App from a Git repository" and click next. 
+During app creation, when prompted, select the option "Create an App from a Git repository" and click next. 
 
 On the next screen enter an application name, provide the Git URL with the format "git@github.com:{YOUR GIT USERNAME}/FH-Training-App-Sencha.git" and enter "ci_testing" in the Git Branch field then click next.
 
@@ -28,9 +26,9 @@ Select the tab representing platform you plan to build for and check the "Enable
 
 ## Step 4
 
-Build the application and download it using the "Build" tab on the left of the Studio and completing the build process.
+Build the application and download it using the "Build" tab on the left of the Studio.
 
-Place the build file and place it in the path_to_repo/test/fixtures/monkeytalk directory.
+Place it in the path_to_repo/test/fixtures/monkeytalk/ directory.
 
 ## Step 5
 
@@ -47,7 +45,7 @@ Now run the tests by typing the following into the terminal:
     ant local-ios-sim
 
 ### iOS Device
-Ensure the app is installed on device and has a Wifi connection on the same network as your development machine. In build.xml find the "local-test-ios-device" target and change its host property to the IP Address of your device. To run tests type the following:
+Ensure the app is installed on device and has a Wifi connection on the same network as your development machine. In build.xml find the "local-test-ios-device" target and change its "host" property to the IP Address of your iOS device. To run tests type the following:
 
     ant local-test-ios-device
 

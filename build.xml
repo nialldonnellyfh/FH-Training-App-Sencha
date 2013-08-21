@@ -106,13 +106,13 @@
       verbose="${mt.verbose}" />
   </target>
 
-<!--       host="192.168.28.134" -->
-   <target name="local-test-ios-device"
+  <target name="local-test-ios-device"
     description="Run tests on iOS device locally (device must already be availaible on local wifi with the app started)"
     depends="copy-libs">
+    <fail unless="device.ipaddress">Must set 'device.ipaddress' for device testing e.g. ant -Ddevice.ipaddress=1.2.3.4</fail>
     <monkeytalk:run agent="${mt.agentIOS}"
       script="${fh.testSuite}"
-      host="192.168.28.134"
+      host="${device.ipaddress}"
       reportdir="${fh.reportDir}"
       thinktime="${mt.thinktime}"
       timeout="${mt.timeout}"

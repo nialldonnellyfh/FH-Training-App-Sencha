@@ -57,11 +57,10 @@
   <target name="local-test-android-emulator"
     description="Run tests on Android emulator locally (emulator must already be running with the app started)"
     depends="copy-libs">
-    <monkeytalk:run agent="${mt.agentAndroid}"
+    <monkeytalk:run agent="${mt.agentAndroidEmulator}"
       adb="${android.adb}"
       script="${fh.testSuite}"
       reportdir="${fh.reportDir}"
-      binary="${fh.binaryAndroid}"
       thinktime="${mt.thinktime}"
       timeout="${mt.timeout}"
       verbose="${mt.verbose}"/>

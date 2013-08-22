@@ -25,6 +25,7 @@
   <!-- monkey talk properties (some use the cloud monkey value above) -->
   <!-- https://www.gorillalogic.com/monkeytalk-documentation/monkeytalk-user-guide/ant-runner -->
   <property name="mt.agentAndroidEmulator" value="AndroidEmulator"/>
+  <property name="mt.agentAndroid" value="Android"/>
   <property name="mt.agentIOS" value="iOS"/>
   <property name="mt.thinktime" value="${cm.thinktime}"/>
   <property name="mt.timeout" value="${cm.timeout}"/>
@@ -56,7 +57,7 @@
   <target name="local-test-android-emulator"
     description="Run tests on Android emulator locally (emulator must already be running with the app started)"
     depends="copy-libs">
-    <monkeytalk:run agent="${mt.agentAndroidEmulator}"
+    <monkeytalk:run agent="${mt.agentAndroid}"
       adb="${android.adb}"
       script="${fh.testSuite}"
       reportdir="${fh.reportDir}"
@@ -66,17 +67,18 @@
       verbose="${mt.verbose}"/>
   </target>
 
-<!--   <target name="local-test-android-device"
+  <target name="local-test-android-device"
     description="Run tests on Android device locally (device must already be availaible on local wifi with the app started)"
     depends="copy-libs">
-    <monkeytalk:run agent="${mt.agentAndroidEmulator}"
-      adb="${android.adb}"
+    <fail unless="device.ipaddress">Must set 'device.ipaddress' for device testing e.g. ant -Ddevice.ipaddress=1.2.3.4</fail>
+    <monkeytalk:run agent="${mt.agentAndroid}"
       script="${fh.testSuite}"
+      host="${device.ipaddress}"
       reportdir="${fh.reportDir}"
       thinktime="${mt.thinktime}"
       timeout="${mt.timeout}"
       verbose="${mt.verbose}" />
-  </target> -->
+  </target>
 
   <target name="local-ios-sim" depends="local-start-simulator-application,local-test-ios-simulator,local-stop-simulator-application"/>
 

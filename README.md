@@ -47,10 +47,16 @@ Now run the tests by typing the following into the terminal:
 ### iOS Device
 Ensure the app is installed on device and has a Wifi connection on the same network as your development machine. In build.xml find the "local-test-ios-device" target and change its "host" property to the IP Address of your iOS device. To run tests type the following:
 
-    ant local-test-ios-device
+    ant local-test-ios-device -Ddevice.ipaddress=192.168.X.X
 
 
 ### Android Emulator
 Install the application APK on the emulator and open the application. Now run the command:
 
     ant local-test-android-emulator
+
+
+### Android Device
+Install the application APK on the device and open the application. Now run the command:
+
+    ant local-test-android-emulator -Ddevice.ipaddress=192.168.X.X

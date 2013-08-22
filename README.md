@@ -1,4 +1,4 @@
-#Introduction to Sencha Touch
+#MonkeyTalk Testing for FeedHenry Hybrid Applications
 
 ## Overview
 

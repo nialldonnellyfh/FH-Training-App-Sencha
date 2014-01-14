@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Stocks
  */
@@ -105,3 +106,5 @@ function getPoints() {
   }
   return response;
 }
+=======
+>>>>>>> c0447988ed573aa9ce0d59f6c1b2fb25f9df29fd
